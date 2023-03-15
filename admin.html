@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="DRONE_CART"/>
+        <meta name="keyword" content="Lunch"/>
+        <title>VINSINFO | FC</title>
+        <link rel='icon' href='assets/images/fevi_logo.jpg' type='image/icon type'>
+
+        <Script src="assets/js/jquery-3.6.0.min.js"></Script>
+
+        <Script src="assets/js/bootstrap.min.js"></Script>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+
+        <Script src="assets/js/admin.js"></Script> 
+        <link rel="stylesheet" href="assets/css/main.css"/>
+
+        <script type="text/javascript” src=”https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+        
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <Script src="assets/js/rum.js"></Script> 
+    </head>
+    <!--Body-->
+    <body>
+        <header>
+            <div class="container-flueid">
+                <div class="row">
+                    <div class="col-lg-2 col-sm-8 px-0 py-3 m-auto">
+                        <span class="navbar-brand-img"><a class="navbar-brand p-0 m-0 text-center" href="index.html"><img src="assets/images/company_logo.png" alt="company_logo" class="log-img"/></a></span>
+                        <span class="text-center c-black">FC</span>
+                    </div>
+                </div>
+                <div class="hr_class"></div>
+
+            </div>
+        </header>
+        <main>
+            <!-- <div class="text-right"><p class="link_page" id="token_relocator">Token page</p></div> -->
+            <div class="container-flueid main_container py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center"><p class="large_text">SELECT THE DATE</p></div>
+                        <div class="col-12 px-3">
+                            <input type="text" id="datepicker">
+                            <div class="text-center my-4"><button class="btn btn-secondary my-2 my-sm-0 " name="btn_search" id ="list_details">LIST DETAILS</button></div>
+                        </div>
+                    </div>
+                    <div class="vertical_scroll table_content_container">
+                        <div class="row px-3">
+                            <h1 class="text-center py-3">Mercury - <span id="mercury_count"></span></h1>
+                            <div class="col-12 br_content tb_header p-3">
+                                <div class="row text-center tb_header">
+                                    <div class="col-1">ID</div>
+                                    <div class="col-2">E.ID</div>
+                                    <div class="col-4">Name</div>
+                                    <div class="col-5">Issued Time</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row token_details vertical_div_scroll px-3">
+                        </div>
+                        <div class="row px-3">
+                            <h1 class="text-center py-3">Venus - <span id="venus_count"></span></h1>
+                            <div class="col-12 br_content tb_header p-3">
+                                <div class="row text-center tb_header">
+                                    <div class="col-1">ID</div>
+                                    <div class="col-2">E.ID</div>
+                                    <div class="col-4">Name</div>
+                                    <div class="col-5">Issued Time</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row token_details_anthor vertical_div_scroll px-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="container-flueid">
+                <div class="footer_bottom text-center p-3 m-auto">
+                    <p class="text-center">Nisha Anand Complex, #80 / 96, Chamiers Road, Teynampet, Chennai 600 018. &copy; Copyright © 2022 Vinsinfo.com. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <div class="loading_img"><img src="./assets/images/loading.gif" alt="loading_image"/></div>
+    </body>
+</html>
