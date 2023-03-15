@@ -28,10 +28,8 @@ name: SonarQube analysis
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches:
+      - main
 
 permissions:
   pull-requests: read # allows SonarQube to decorate PRs with analysis results
