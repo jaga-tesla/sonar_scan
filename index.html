@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Vinsinfo Employee</title>
+        <Script src="assets/js/jquery-3.6.0.min.js"></Script>
+        <Script src="assets/js/bootstrap.min.js"></Script>
+        <Script src="assets/selectize.js-master/dist/js/standalone/selectize.min.js"></Script>
+        <Script src="assets/selectize.js-master/dist/js/standalone/selectize.js"></Script>
+        <Script src="assets/js/script.js"></Script>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/css/main.css"/>
+        <link rel="stylesheet" href="assets/selectize.js-master/dist/css/selectize.css"/>
+
+        <!-- <script src = "..\selectize.js-master\dist\js\standalone\selectize.js">
+        </script>
+    
+        <link rel ="stylesheet" href="..\selectize.js-master\dist\css\selectize.css"> -->
+    </head>
+    <body>
+        <div class="bg-main-image">
+            <div class="total-container container">
+                <!--Header-->
+                <header class="main-container">
+                    <div class="header-container">
+                        <nav class="navbar navbar-expand-lg navbar-light py-0">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/images/tool_logo.png" alt="tool_logo"/>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                    <li class="nav-item active">
+                                        <a class="nav-link text-white" href="index.html"><span class="first_letter">P</span>rofile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" href="admin.html"><span class="first_letter">A</span>dmin</a>
+                                    </li>
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link" href="#"><span class="first_letter">F</span>eeds</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><span class="first_letter">G</span>oals</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><span class="first_letter">V</span>iew</a>
+                                    </li> -->
+                                </ul>
+                                <div id ="frm_userinfo" class="form-inline my-2 my-lg-0">
+                                    <!-- <input class="" type="search" name="search_item" placeholder="Search Employee"/> -->
+                                    <select id="selectize_user" class="search_service edit_search_bar mx-3" placeholder="Akarshana"></select>
+                                    
+                                    <!-- <button class="btn btn-secondary" name="btn_search" id="user_select">Search</button> -->
+                                </div>
+                                <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-left">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#" class="h6">UpGrade</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html"><img src="assets/images/bell-icons.png" alt="bell-icon" class="icon_image"/></a>
+                                        <span></span>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <!--Main container-->
+                <main  class="row p-0 m-0 main">
+                    <div class="employee_agenda col-lg-2 col-12">
+                        <div class="main-container min_height profile_thumnail">
+                            <nav class="navbar navbar-expand-lg navbar-light px-0">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                                    <div class="list-group list-group-flush mx-1 my-2">
+                                        <div class="employee_thum_details side_nav_bar p-1 m-1">
+                                            <figure id="thumbnail_image">
+                                                <!-- <img src="" alt="employee_jaga_photo" class="img-fluid img-thumbnail text-center" id="thumbnail_image"/> -->
+                                            </figure>
+                                            <div class="staff-details">
+                                                <h6 class="thumb-detail thumb-detail_name text-center font-weight-bold text-white" id="user_name"></h6>
+                                                <p class="positon text-center m-0 text-white" id="role_name"></p>
+                                                <hr>
+                                                <p class="thumb-detail text-center py-2 font-weight-bold m-0" id="team_name"></p>
+                                                <!-- <div class="status_of_employee row m-0">
+                                                    <span class="col-6 p-2 text-light">Status</span>
+                                                    <button type="button"  class="col-6 btn btn-secondary" id="status_check">Check status</button>
+                                                </div> -->
+                                                <p class="work_place py-3 px-3 m-0">
+                                                    <img src="assets/images/location_logo.png" alt="location_logo" class="icon_image"/>
+                                                    <span class="px-2 permenent_address text-white"></span>
+                                                </p>
+                                                <p class="work_place py-3 px-3 m-0">
+                                                    <img src="assets/images/location_logo.png" alt="location_logo" class="icon_image"/>
+                                                    <span class="px-2 temprary_address text-white"></span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="employee_team_detail side_nav_bar p-1 m-1">
+                                            <h6 class="thumb-detail text-left font-weight-bold my-2 text-white"><span class="first_letter">D</span>epartment <span class="first_letter">M</span>embers</h6>
+                                            <div class="row m-0 team_members">
+                                                <!-- <div class="col-4 p-1"><a href="#"><img src="assets/images/employee_jaga_photo.png" alt="employee_jaga_photo" class="text-center team_members_image"/></a></div>
+                                                <div class="col-4 p-1"><a href="#"><img src="assets/images/employee_jaga_photo.png" alt="employee_jaga_photo" class="text-center team_members_image"/></a></div>
+                                                <div class="col-4 p-1"><a href="#"><img src="assets/images/employee_jaga_photo.png" alt="employee_jaga_photo" class="text-center team_members_image"/></a></div> -->
+                                            </div>
+                                        </div>
+                                        <!-- <div class="employee_announcements side_nav_bar p-1 m-1">
+                                            <h6 class="thumb-detail text-left font-weight-bold mt-0"><span class="first_letter">A</span>nnouncements</h6>
+                                            <div class="row m-0 p-0 employee_announcements_links">
+                                                <div class="col-3 p-1 text-center celibrating_container"><a href="#"><img src="assets/images/birthday_party.png" alt="birthday_logo_logo" class="text-center my-auto announcements_logo"/></a></div>
+                                                <div class="col-3 p-1 text-center"><a href="#"><img src="assets/images/star.png" alt="star_logo" class="text-center my-auto announcements_logo"/></a></div>
+                                                <div class="col-3 p-1 text-center"><a href="#"><img src="assets/images/people.png" alt="people_logo" class="text-center my-auto announcements_logo"/></a></div>
+                                                <div class="col-3 p-1 text-center"><a href="#"><img src="assets/images/link_logo.png" alt="link_logo" class="text-center my-auto announcements_logo"/></a></div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="employee_full_details col-lg-10 col-12">
+                        <div class="main-container min_height">
+                            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo04" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse field_select" id="navbarTogglerDemo04">
+                                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center row m-0 px-2">
+                                        <li id="profile" class="nav-item active col-2 py-1"><span class="thumb-detail text-center font-weight-bold"><span class="first_letter">P</span>rofile</span></li>
+                                        <!-- <li id="feeds" class="nav-item col-2 py-3"><span class="thumb-detail text-center font-weight-bold"><span class="first_letter">F</span>eeds</span></li> -->
+                                        <!-- <li id="goals" class="nav-item col-2 py-3"><span class="thumb-detail text-center font-weight-bold"><span class="first_letter">G</span>oals</span></li> -->
+                                        <li id="view" class="nav-item col-2 py-1"><span class="thumb-detail text-center font-weight-bold"><span class="first_letter">V</span>iew</span></li>
+                                        <li id="vision" class="nav-item col-2 py-1"><span class="thumb-detail text-center font-weight-bold"><span class="first_letter">V</span>ision</span></li>
+                                        <!-- <li id="customer" class="nav-item col-2 py-3"><span class="thumb-detail text-center font-weight-bold"><span class="first_letter">C</span>ustomer</span></li> -->
+                                        <!-- <li id="admin" class="nav-item col-2 py-1"><span class="thumb-detail text-center font-weight-bold"><span class="first_letter">A</span>dmin</span></li> -->
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="detail_of_each_catogory py-3">
+                                <!-- <div class="sample_test"><p></p></div> -->
+                                <div class="content_of_employee selected" id="profile_contianer">
+                                    <div class="genaral_details p-3 m-0">
+                                        <table>
+                                            <tr><td class="h6 p-3" ><span class="first_letter">E</span>mployee Id</td><td class="px-3" id="employee_id">2136</td></tr>
+                                            <tr><td class="h6 p-3" ><span class="first_letter">E</span>mail ID</td><td class="px-3"><a href="#" id="email_id">jagadeesh.p@Vinsifo.com</a></td></tr>
+                                            <tr><td class="h6 p-3"><span class="first_letter">W</span>ork Location</td><td class="px-3">Chennai</td></tr>
+                                            <!-- <tr><td class="h6 thumb-detail py-3">Extension</td><td class="px-3">Extension</td></tr> -->
+                                            <tr><td class="h6 p-3" ><span class="first_letter">M</span>obile</td><td class="px-3" id="mobile">9842794053</td></tr>
+                                            <tr><td class="h6 p-3" ><span class="first_letter">A</span>lternate Mobile</td><td class="px-3" id="alternat_mobile">9842794053</td></tr>
+                                            <tr><td class="h6 p-3" ><span class="first_letter">E</span>mergency contact</td><td class="px-3" id="emergency_contact">9842794053</td></tr>
+                                            <tr><td class="h6 p-3" ><span class="first_letter">D</span>ate of Birth</td><td class="px-3" id="date_of_birth">9842794053</td></tr>
+                                        </table>
+                                        <!-- <div class="text-center">
+                                            <a href="#">More...</a>
+                                        </div> -->
+                                    </div>
+                                    <!-- <div class="skill_sets pl-5">
+                                        <div class="skill_set-header p-3 row">
+                                            <div class="col-10">
+                                                <span><img src="assets/images/note_title.png" alt="note_title_logo" class="icon_image"/></span>
+                                                <span class="mx-3 h5">Skill sets</span>
+                                            </div>
+                                            <div class="col-2">
+                                                <span><img src="assets/images/plus.png" alt="plus_logo" class="icon_image"/></span>
+                                            </div>
+                                        </div>
+                                        <div class="skill_set_body">
+                                            <div class="p-3 row">
+                                                <div class="col-3"><h6 class="m-0">C++</h6></div>
+                                                <div class="col-9">
+                                                    <div class="level_shower">
+                                                        <div class="row mt-1">
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-3 row">
+                                                <div class="col-3"><h6 class="m-0">HTML</h6></div>
+                                                <div class="col-9">
+                                                    <div class="level_shower">
+                                                        <div class="row mt-1">
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-3 row">
+                                                <div class="col-3"><h6 class="m-0">Java</h6></div>
+                                                <div class="col-9">
+                                                    <div class="level_shower">
+                                                        <div class="row mt-1">
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-3 row">
+                                                <div class="col-3"><h6 class="m-0">C++</h6></div>
+                                                <div class="col-9">
+                                                    <div class="level_shower">
+                                                        <div class="row mt-1">
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-3 row">
+                                                <div class="col-3"><h6 class="m-0">HTML</h6></div>
+                                                <div class="col-9">
+                                                    <div class="level_shower">
+                                                        <div class="row mt-1">
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-3 row">
+                                                <div class="col-3"><h6 class="m-0">Java</h6></div>
+                                                <div class="col-9">
+                                                    <div class="level_shower">
+                                                        <div class="row mt-1">
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-3 row">
+                                                <div class="col-3"><h6 class="m-0">Java</h6></div>
+                                                <div class="col-9">
+                                                    <div class="level_shower">
+                                                        <div class="row mt-1">
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                            <div class="col-2 mx-1 skill_level skill_level_none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="direct_reporting px-4 pr-5">
+                                        <div class="direct_reporting_header my-3">
+                                            <div class="col-10">
+                                                <span><img src="assets/images/note_title.png" alt="note_title_logo" class="icon_image"/></span>
+                                                <span class="mx-3 h5">Direct reports</span>
+                                            </div>
+                                        </div>
+                                        <div class="row m-0 p-0">
+                                            <div class="col py-1">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <img src="assets/images/employee_jaga_photo.png" alt="employee_jaga_photo" class="text-center team_members_image"/>
+                                                    </div>
+                                                    <div class="col-10 p-0">
+                                                        <p class="p-0 m-0 h6">Victor</p>
+                                                        <p class="p-0 m-0">Assosiative developer</p>
+                                                    </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-0 p-0">
+                                            <div class="col py-1">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <img src="assets/images/employee_jaga_photo.png" alt="employee_jaga_photo" class="text-center team_members_image"/>
+                                                    </div>
+                                                    <div class="col-10 p-0">
+                                                        <p class="p-0 m-0 h6">Karthi</p>
+                                                        <p class="p-0 m-0">Assosiative developer</p>
+                                                    </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row m-0 p-0">
+                                            <div class="col py-1">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <img src="assets/images/employee_jaga_photo.png" alt="employee_jaga_photo" class="text-center team_members_image"/>
+                                                    </div>
+                                                    <div class="col-10 p-0">
+                                                        <p class="p-0 m-0 h6">Akarshana</p>
+                                                        <p class="p-0 m-0">Assosiative developer</p>
+                                                    </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="content_of_employee" id="feeds_contianer">
+                                    <div class="feeds_heading text-center">
+                                        <h4>FEEDS</h4>
+                                    </div>
+                                    <!-- <div class="feeds_content mx-5 my-4">
+                                        <div class="row px-5 m-0">
+                                            <div class="col-1">
+                                                <span><img src="assets/images/employee_jaga_photo.png" alt="employ_jage_photo_logo" class="text-center employee_image"/></span>
+                                            </div>
+                                            <div class="col-11">
+                                                <p class="p-0 m-0 h6">Victor</p>
+                                                <p class="p-0 m-0">Mon 12</p>
+                                                <div class="py-4">
+                                                    <p>Hi,<br>Good news! The Enchancements have gone live. Take a look at the document and share your views. And, don't forgot to mention this quarter.</p>
+                                                    <p>Looking forward to double our achivement this Quarter.</p>
+                                                    <p>Happy selling!</p>
+                                                    <form  method = "post" action = "" id ="frm_userinfo" class="form-inline my-2 my-lg-0">
+                                                        <input class="form-control mr-sm-2" type="search" name="search_item" placeholder="Mesages..."/>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row px-5 m-0">
+                                            <div class="col-1">
+                                                <span><img src="assets/images/employee_jaga_photo.png" alt="employ_jage_photo_logo" class="text-center employee_image"/></span>
+                                            </div>
+                                            <div class="col-11">
+                                                <p class="p-0 m-0 h6">Karthi</p>
+                                                <p class="p-0 m-0">Mon 11</p>
+                                                <div class="py-4">
+                                                    <p>Hi,<br>Good news! The Enchancements have gone live. Take a look at the document and share your views. And, don't forgot to mention this quarter.</p>
+                                                    <p>Looking forward to double our achivement this Quarter.</p>
+                                                    <p>Happy selling!</p>
+                                                    <form  method = "post" action = "" id ="frm_userinfo" class="form-inline my-2 my-lg-0">
+                                                        <input class="form-control mr-sm-2" type="search" name="search_item" placeholder="Mesages..."/>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row px-5 m-0">
+                                            <div class="col-1">
+                                                <span><img src="assets/images/employee_jaga_photo.png" alt="employ_jage_photo_logo" class="text-center employee_image"/></span>
+                                            </div>
+                                            <div class="col-11">
+                                                <p class="p-0 m-0 h6">Karthi</p>
+                                                <p class="p-0 m-0">Mon 11</p>
+                                                <div class="py-4">
+                                                    <p>Hi,<br>Good news! The Enchancements have gone live. Take a look at the document and share your views. And, don't forgot to mention this quarter.</p>
+                                                    <p>Looking forward to double our achivement this Quarter.</p>
+                                                    <p>Happy selling!</p>
+                                                    <form  method = "post" action = "" id ="frm_userinfo" class="form-inline my-2 my-lg-0">
+                                                        <input class="form-control mr-sm-2" type="search" name="search_item" placeholder="Mesages..."/>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="content_of_employee" id="goals_contianer">                                    
+                                    <!-- <div class="goals_details m-4">
+                                        <div class="goals_details_container">
+                                            <div class="goals_container_title row text-center">
+                                                <div class="col-3"><h5>Goals Titile</h5></div>
+                                                <div class="col-2"><h5>Status</h5></div>
+                                                <div class="col-2"><h5>Progress</h5></div>
+                                                <div class="col-2"><h5>Dates</h5></div>
+                                                <div class="col-1"><h5>Priority</h5></div>
+                                                <div class="col-2"><h5>Assignee</h5></div>
+                                            </div>
+                                            <hr>
+                                            <div class="goals_container_body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-3">
+                                                        <div class="goal_name px-3"><h5>Increase Instance level </h5></div>
+                                                        <div class="goal_short_description px-3"><p>add 8gb to in...</p></div>
+                                                    </div>
+                                                    <div class="col-2 text-center goal_status">On Track</div>
+                                                    <div class="col-2">
+                                                        <div class="progress_container mx-4 goal_progress"><div class="progress_shower" style="width: 80%;">80%</div></div>
+                                                    </div>
+                                                    <div class="col-2 text-center goal_assign_date">Jan 1 - Dec 31</div>
+                                                    <div class="col-1 text-center goals_priority"><span>High</span></div>
+                                                    <div class="col-2 goal_assignee text-right">
+                                                        <span><img src="assets/images/employee_jaga_photo.png" alt="plus_logo" class="employee_image"/></span>
+                                                        <span class="px-4">Victor</span>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row align-items-center">
+                                                    <div class="col-3">
+                                                        <div class="goal_name px-3"><h5>Create S3 bucket in ap-east-1</h5></div>
+                                                        <div class="goal_short_description px-3"><p>Create and test it...</p></div>
+                                                    </div>
+                                                    <div class="col-2 text-center goal_status">Off Track</div>
+                                                    <div class="col-2">
+                                                        <div class="progress_container mx-4 goal_progress"><div class="progress_shower" style="width: 30%;">30%</div></div>
+                                                    </div>
+                                                    <div class="col-2 text-center goal_assign_date">Jan 2 - Dec 4</div>
+                                                    <div class="col-1 text-center goals_priority"><span>Low</span></div>
+                                                    <div class="col-2 goal_assignee text-right">
+                                                        <span><img src="assets/images/employee_jaga_photo.png" alt="plus_logo" class="employee_image"/></span>
+                                                        <span class="px-4">Victor</span>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row align-items-center">
+                                                    <div class="col-3">
+                                                        <div class="goal_name px-3"><h5>Increase Instance level </h5></div>
+                                                        <div class="goal_short_description px-3"><p>add 8gb to in...</p></div>
+                                                    </div>
+                                                    <div class="col-2 text-center goal_status">On Track</div>
+                                                    <div class="col-2">
+                                                        <div class="progress_container mx-4 goal_progress"><div class="progress_shower" style="width: 50%;">50%</div></div>
+                                                    </div>
+                                                    <div class="col-2 text-center goal_assign_date">Jan 1 - Dec 31</div>
+                                                    <div class="col-1 text-center goals_priority"><span>High</span></div>
+                                                    <div class="col-2 goal_assignee text-right">
+                                                        <span><img src="assets/images/employee_jaga_photo.png" alt="plus_logo" class="employee_image"/></span>
+                                                        <span class="px-4">Victor</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="content_of_employee" id="view_contianer">
+                                    <div class="px-5">
+                                        <div class="text-right py-2">
+                                            <button type="button" class="btn btn-danger" id="edit_tab">EDIT</button>
+                                            <button type="button" class="btn btn-primary" id="show_tab">SHOW</button>
+                                        </div>
+                                        <h6><span class="first_letter">S</span>ervice</h6>
+                                        <div class="row edit_container">
+                                            <div class="col-3">
+                                                <select id="selectize_service" class="search_service edit_search_bar"></select>
+                                            </div>
+                                            <div class="col-2 text-end">
+                                                <button type="button" class="btn btn-secondary text-end" id="add_new_service">Add</button>
+                                                <p id="result"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row overfolw-container-service-view">
+                                        </div>
+                                        <div class="text-center want_to_remove want_to_remove_service"><button type="button" class="btn btn-secondary" id="remove_new_service">Remove</button></div>
+                                        <h6><span class="first_letter">C</span>oncept</h6>
+                                        <div class="row edit_container">
+                                            <div class="col-3">
+                                                <select id="selectize_concept" class="search_concept edit_search_bar">
+                                                </select>
+                                            </div>
+                                            <div class="col-2 text-end">
+                                                <button type="button" class="btn btn-secondary text-end" id="add_new_concept">Add</button>
+                                                <p id="result"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row overfolw-container-concept-view">
+                                        </div>
+                                        <div class="text-center want_to_remove want_to_remove_concept"><button type="button" class="btn btn-secondary" id="remove_new_concept">Remove</button></div>
+                                        <h6><span class="first_letter">C</span>ustomer</h6>
+                                        <div class="row edit_container">
+                                            <div class="col-3">
+                                                <select id="selectize_customer" class="search_customer edit_search_bar">
+                                                </select>
+                                            </div>
+                                            <div class="col-2 text-end">
+                                                <button type="button" class="btn btn-secondary text-end" id="add_new_customer">Add</button>
+                                                <p id="result"></p>
+                                            </div>
+                                        </div>
+                                        <div class="row overfolw-container-customer-view">
+                                        </div>
+                                        <div class="text-center want_to_remove want_to_remove_customer"><button type="button" class="btn btn-secondary" id="remove_new_customer">Remove</button></div>
+                                    </div>
+                                </div>
+                                <div class="content_of_employee analyse_section" id="vision_contianer">
+                                    <div class="role_content">
+                                        <div class="row my-4 py-1 analyse_section_role_customer_select">
+                                            <div class="server_select col-5 pt-2">
+                                                <input type="checkbox" value="1" id="user_selsect"/>
+                                                <label for="user_selsect">CUSTOMER</label>
+                                            </div>
+                                            <div class="col-7 text-right">                                            
+                                                <div class="service_select_box ">
+                                                    <div class="d-inline"><span class="d-inline text-blue px-4">ROLE : </span><select name="server_select" class="form-control d-inline inner_input select_box_width" id="service_select"></select></div>
+                                                </div>
+                                                <div class="customer_select_box">
+                                                    <div class="d-inline"><span class="d-inline text-blue px-4">CUSTOMER : </span><select id="customer_select" class="form-control d-inline inner_input select_box_width"></select></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-2"><span class="first_letter">S</span>ervices</h4>
+                                        <div class="row mx-0 justify-content-around">
+                                            <div class="col-5 text-left align-middle">
+                                                <h3 calss="ratio_show">User / Selected ratio : <span id="user_role_service_ratio"></span></h3>
+                                            </div>
+                                            <div class="col-5 text-left align-middle">
+                                                <h3>Advanced progress count : <span id="role_service_adv_count"></span></h3>
+                                            </div>
+                                            <div class="col-2  text-end align-middle">
+                                                <div class="progress_container goal_progress service_progress"></div>
+                                            </div>
+                                        </div>
+                                        <div class="px-5 py-4 align-middle">
+                                            <div class="overfolw-container_service">
+                                            </div>
+                                        </div>
+                                        <h4 class="mb-2"><span class="first_letter">C</span>oncepts</h4>
+                                        <div class="row mx-0 justify-content-around">
+                                            <!-- <div class="server_select col-3 px-3">
+                                                <select name="server_select" class="form-control inner_input" id="concept_select">
+                                                </select> 
+                                            </div> -->
+                                            <div class="col-5 text-left align-middle">
+                                                <h3 class="ratio_show">User / Selected ratio : <span id="user_role_concept_ratio"></span></h3>
+                                            </div>
+                                            <div class="col-5 text-left align-middle">
+                                                <h3>Advanced progress count : <span id="role_concept_adv_count"></span></h3>
+                                            </div>
+                                            <div class="col-2 text-end align-middle">
+                                                <div class="progress_container goal_progress concept_progress"></div>
+                                            </div>
+                                        </div>
+                                        <div class="px-5 py-4 align-middle">
+                                            <div class="overfolw-container_concept">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_of_employee" id="admin_contianer">
+                                    <h4 class="text-center mb-4">Admin</h4>
+                                    <div class="row">
+                                        <div class="col-3">                                    
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="content_of_employee analyse_section" id="customer_contianer">
+                                    <h4 class="text-center mb-4">customer</h4>
+                                    <div class="row">
+                                        <div class="col-3">                                    
+                                            
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer>
+                    <div class="container p-0 m-0">
+                        <div class="footer_bottom text-center p-3">
+                            <p class="text-center">Nisha Anand Complex, #80 / 96, Chamiers Road, Teynampet, Chennai 600 018</p>
+                            <p class="text-center">&copy; Copyright © 2022 Vinsinfo.com. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- potioning divs -->
+        <div class="status_check">
+            <div class="detail_of_employee_status">
+                <img src="assets/images/cancel.png" alt="cancel_image" class="cancel_status_check" />
+            </div>
+        </div>
+        <!-- celibrating div-->
+        <div class="announce_check">
+            <div class="detail_of_employee_status">
+                <img src="assets/images/cancel.png" alt="cancel_image" class="cancel_status_check" />
+                <div class="row m-5 text-right">
+                    <div class="col-5">
+                        <h3>Comming Zoon : Jul - 26</h3>
+                    </div>
+                </div>
+                <div class="p-5 text-right m-5"><div class="p-5"><h2>As you enter a brand new year, I hope that you feel just how loved and cherished you are. My wish for you is that all of your goals are realized and then that you make even bigger goals to conquer. You are a rockstar. Never forget that. Happy birthday!</h2></div></div>
+            </div>
+        </div>
+        <div class="loading_container"><img src="assets/images/Loading_icon.gif" alt="loading_image"></div>
+    </body>
+</html>
