@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="DRONE_CART"/>
+        <meta name="keyword" content="Lunch"/>
+        <title>VINSINFO | FC</title>
+        <link rel='icon' href='assets/images/fevi_logo.jpg' type='image/icon type'>
+
+        <Script src="assets/js/jquery-3.6.0.min.js"></Script>
+
+        <Script src="assets/js/bootstrap.min.js"></Script>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+
+        <Script src="assets/js/script.js"></Script> 
+        <link rel="stylesheet" href="assets/css/main.css"/>
+        <!-- <Script src="assets/selectize.js-master/dist/js/standalone/selectize.min.js"></Script>
+        <Script src="assets/selectize.js-master/dist/js/standalone/selectize.js"></Script> -->
+        
+        <script type="text/javascript” src=”https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+        <!-- <link rel="stylesheet" href="assets/selectize.js-master/dist/css/selectize.css"/> -->
+
+    </head>
+    <!--Body-->
+    <body>
+        <header>
+            <div class="container-flueid">
+                <div class="row">
+                    <div class="col-lg-2 col-sm-8 px-0 py-3 m-auto">
+                        <span class="navbar-brand-img"><a class="navbar-brand p-0 m-0 text-center" href="index.html"><img src="assets/images/company_logo.png" alt="company_logo" class="log-img"/></a></span>
+                        <span class="text-center c-black">FC</span>
+                    </div>
+                </div>
+                <!-- <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="index.php">
+                        <img src="assets/images/company_logo.png" alt="company_logo" class="log-img"/>
+                    </a>
+                </nav> -->
+                <div class="hr_class"></div>
+            </div>
+        </header>
+        <main>
+            <!-- <div class="text-right"><p class="link_page" id="token_relocator">Admin Page</p></div> -->
+            <div class="container-flueid main_container py-5">
+                <div class="container">
+                    <div class="form_container user_form mx-4">
+                        <div class="form-row">
+                            <div  class="select_employe_id text-center col-12">
+                                <input type="text" name="employ_id" class="employee_id" id="employee_id"  placeholder="EMPLOYEE ID"/>
+                            </div>
+                        </div>
+                        <div class="text-center py-4"><button class="btn btn-secondary my-2 my-sm-0 " name="btn_search" id ="get_tocken">GET TOKEN</button></div>
+                        <div class="text-center py-4"><button class="btn btn-secondary my-2 my-sm-0 " name="btn_search" id ="get_anather_tocken">GET ANOTHER TOKEN</button></div>
+                        <h1 class="text-center">Everyday tokens can be generated only from 6AM to 10:30AM</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container-flueid user_navi_container py-5">
+                <div class="container">
+                    <h1 class="py-5 text-center text_large">DUE TO UNAVOIDABLE REASON LUNCH VENDOR NOT AVAILABLE FOR TODAY. KINDLY ARRANGE LUNCH BY YOURSELVES.</h1>
+                </div>
+            </div>
+        </main>
+        </div>
+        <footer>
+            <div class="container-flueid">
+                <div class="footer_bottom text-center p-3 m-auto">
+                    <p class="text-center">Nisha Anand Complex, #80 / 96, Chamiers Road, Teynampet, Chennai 600 018. &copy; Copyright © 2022 Vinsinfo.com. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <div class="loading_img"><img src="./assets/images/loading.gif" alt="loading_image"/></div>
+        <div class="message_box">
+            <div class="message_box_header text-center py-3">
+                <img src="assets/images/tick_image.png" class="tick_image text-center" alt="tick_image"/>
+            </div>
+            <div class="message_box_body text-center py-4">
+                <h6><span id="employee_name"></span></h6>
+                <div class="py-3 mx-4 px-2 row">
+                    <div class="col-12 py-3 mx-4 text-left">
+                        <input type="checkbox" id="lunch_check" name="lunch_check" value="lunch" class="check_box" checked="true">
+                        <label class="check_box_lable" for="lunch_check">Lunch ₹35/-</label>
+                    </div>
+                    <div class="col-12 py-3 mx-4 gravy_check_checkbox_container text-left">
+                        <input type="checkbox" id="gravy_check" name="gravy_check" value="gravy" class="check_box">
+                        <label class="check_box_lable" for="gravy_check">Egg Gravy ₹15/-</label>
+                    </div>
+                </div>
+                <p class="py-3">KINDLY CONFIRM YOUR ORDER</p>
+                <button type="button" class="btn btn-success" id="confirom_ok">Ok</button>&nbsp&nbsp
+                <button type="button" class="btn btn-danger" id="confirom_cancel">Cancel</button>
+            </div>
+        </div>
+        <div class="message_two">
+            <div class="row p-5">
+                <div class="col-12 p-g text-center">
+                <h1 class="text-center py-4 font-large">Token No</h1>
+                <span id="token_number" class="p-1 text-center"></span>
+                <h1 class="text-cent py-4" id="name_of_employee"></h1>
+                </div>
+            </div>
+            <p class="time_issued text-center"></p>
+        </div>
+        <div class="message_box_three">
+            <div class="message_box_header text-center py-3">
+                <img src="assets/images/tick_image.png" class="tick_image text-center" alt="tick_image"/>
+            </div>
+            <div class="message_box_body text-center py-4">
+                <h6 class="error_message"></h6>
+                <div class="py-4"></div>
+                <button type="button" class="btn btn-success" id="reload_ok">Ok</button>&nbsp&nbsp
+            </div>
+        </div>
+
+    </body>
+</html>
